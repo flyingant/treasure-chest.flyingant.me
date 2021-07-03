@@ -6,10 +6,26 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="container mx-auto">
-    <h1 class="font-sans subpixel-antialiased bg-green-500">
-      Hello MaYi!
-    </h1>
+  <div class="w-full h-screen flex flex-col items-center justify-start">
+    <div class="container font-sans mb-4 px-4 flex items-center justify-between">
+      <h2 class="text-2xl text-gre">
+        MaYi's Pirate Treasure Chest
+      </h2>
+      <div class="h-32"></div>
+    </div>
+    <hr class="container mb-4" />
+    <div class="container flex flex-wrap p-4">
+      <div class="w-64 h-32 border border-gray-100 flex-auto m-2 p-2 cursor-pointer">
+        <a href="https://qrcode.flyingant.me" target="_blank">
+          QRCode Generator
+        </a>
+      </div>
+      <div class="w-64 h-32 border border-gray-100 flex-auto m-2 p-2 cursor-pointer">
+        <a href="https://draft.flyingant.me" target="_blank">
+          Draft Tool
+        </a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

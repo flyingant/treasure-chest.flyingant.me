@@ -4,9 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.js',
   },
 
   mode: 'development',
@@ -41,7 +40,7 @@ module.exports = {
             loader: 'file-loader',
             options: {},
           },
-        ]
+        ],
       },
       {
         test: /\.(png|jpg|gif|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
@@ -49,29 +48,24 @@ module.exports = {
           {
             loader: 'url-loader', // works like file loader but can return a DataURL if the file is smaller than a byte limit.
             options: {
-              limit: 8192
+              limit: 8192,
             },
           },
-        ]
+        ],
       },
       {
         test: /\.json$/,
-        use: ["json-loader"]
+        use: ['json-loader'],
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
-    ]
+    ],
   },
 
   resolve: {
-    extensions: ['.js', '.jsx','.scss', '.sass', '.css'],
+    extensions: ['.js', '.jsx', '.scss', '.sass', '.css'],
   },
 
   devServer: {
@@ -84,18 +78,16 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'HTML Boilerplate',
-      template: 'src/templates/index.html'
+      title: `MaYi's Pirate Treasure Chest`,
+      template: 'src/templates/index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        {from: './src/assets', to: './assets'},
-      ],
-    })
-  ]
+      patterns: [{ from: './src/assets', to: './assets' }],
+    }),
+  ],
 };
